@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JECILLE DARAY | PORTFOLIO</title>
+<!-- Tab Icon -->
+
+     <link rel="icon" type="image/png" href="logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<style>
+
+:root{
+--primary:#7f5af0;
+--secondary:#2cb67d;
+--dark:#0f172a;
+--glass:rgba(255,255,255,0.08);
+--border:rgba(255,255,255,0.12);
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0f172a;
+color:#fff;
+overflow-x:hidden;
+}
+
+/* ===================
+   Animated Background
+=================== */
+
+.background{
+position:fixed;
+inset:0;
+z-index:-2;
+background:
+linear-gradient(
+135deg,
+#0f172a,
+#111827,
+#1e1b4b,
+#0f172a
+);
+background-size:400% 400%;
+animation:gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* ===================
+   Floating Blobs
+=================== */
+
+.blob{
+position:fixed;
+border-radius:50%;
+filter:blur(100px);
+opacity:.5;
+z-index:-1;
+animation:float 10s ease-in-out infinite;
+}
+
+.blob1{
+width:350px;
+height:350px;
+background:#7f5af0;
+top:-100px;
+left:-100px;
+}
+
+.blob2{
+width:300px;
+height:300px;
+background:#2cb67d;
+bottom:-100px;
+right:-100px;
+animation-delay:3s;
+}
+
+.blob3{
+width:250px;
+height:250px;
+background:#00d9ff;
+top:50%;
+left:50%;
+animation-delay:5s;
+}
+
+@keyframes float{
+0%,100%{
+transform:translateY(0px);
+}
+50%{
+transform:translateY(-50px);
+}
+}
+
+/* ===================
+   Navbar
+=================== */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 10%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+backdrop-filter:blur(20px);
+background:rgba(255,255,255,.05);
+border-bottom:1px solid rgba(255,255,255,.05);
+z-index:1000;
+}
+
+.logo{
+font-size:28px;
+font-weight:800;
+background:linear-gradient(90deg,#7f5af0,#00d9ff);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+margin-left:30px;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover{
+color:#00d9ff;
+}
+
+/* ===================
+   Hero
+=================== */
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:0 10%;
+}
+
+.hero h1{
+font-size:5rem;
+font-weight:800;
+line-height:1.1;
+margin-bottom:20px;
+}
+
+.hero span{
+background:linear-gradient(
+90deg,
+#7f5af0,
+#00d9ff
+);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.hero p{
+max-width:700px;
+font-size:1.1rem;
+opacity:.8;
+margin-bottom:40px;
+}
+
+.btn{
+padding:15px 35px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+color:white;
+background:linear-gradient(
+90deg,
+#7f5af0,
+#00d9ff
+);
+transition:.4s;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+box-shadow:0 15px 30px rgba(0,217,255,.25);
+}
+
+/* ===================
+   Glassmorphism
+=================== */
+
+.glass{
+background:var(--glass);
+border:1px solid var(--border);
+backdrop-filter:blur(20px);
+border-radius:25px;
+}
+
+/* ===================
+   Sections
+=================== */
+
+section{
+padding:100px 10%;
+}
+
+.section-title{
+font-size:3rem;
+text-align:center;
+margin-bottom:60px;
+}
+
+/* About */
+
+.about{
+padding:50px;
+text-align:center;
+line-height:1.8;
+}
+
+/* Skills */
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.skill-card{
+padding:30px;
+transition:.4s;
+}
+
+.skill-card:hover{
+transform:translateY(-10px);
+border-color:#00d9ff;
+}
+
+.skill-card h3{
+margin-bottom:10px;
+color:#00d9ff;
+}
+
+/* Projects */
+
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.project-card{
+overflow:hidden;
+transition:.4s;
+}
+
+.project-card:hover{
+transform:translateY(-10px);
+}
+
+.project-img{
+height:220px;
+background:linear-gradient(
+135deg,
+#7f5af0,
+#00d9ff
+);
+}
+
+.project-content{
+padding:25px;
+}
+
+.project-content h3{
+margin-bottom:10px;
+}
+
+/* Contact */
+
+.contact{
+padding:50px;
+text-align:center;
+}
+
+.contact-links{
+margin-top:20px;
+}
+
+.contact-links a{
+display:inline-block;
+margin:10px;
+padding:12px 25px;
+border-radius:50px;
+text-decoration:none;
+color:white;
+border:1px solid rgba(255,255,255,.2);
+transition:.3s;
+}
+
+.contact-links a:hover{
+background:#00d9ff;
+color:#111;
+}
+
+/* Footer */
+
+footer{
+text-align:center;
+padding:30px;
+opacity:.6;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:3rem;
+}
+
+nav{
+display:none;
+}
+
+.section-title{
+font-size:2rem;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="background"></div>
+
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+<div class="blob blob3"></div>
+
+<header>
+
+    <script>
+let lastTime = 0;
+
+document.addEventListener("mousemove", (e) => {
+
+    const now = Date.now();
+
+    // Controls smoke density
+    if(now - lastTime < 25) return;
+
+    lastTime = now;
+
+    createSmoke(e.clientX, e.clientY);
+});
+
+function createSmoke(x, y){
+
+    const smoke = document.createElement("div");
+    smoke.classList.add("smoke");
+
+    const size = Math.random() * 18 + 12;
+
+    smoke.style.width = size + "px";
+    smoke.style.height = size + "px";
+
+    smoke.style.left = x + "px";
+    smoke.style.top = y + "px";
+
+    smoke.style.setProperty(
+        "--driftX",
+        (Math.random() * 50 - 25) + "px"
+    );
+
+    document.body.appendChild(smoke);
+
+    setTimeout(() => {
+        smoke.remove();
+    }, 1500);
+}
+</script>
+<style>
+
+body{
+    margin:0;
+    height:100vh;
+    background:transparent;
+}
+
+/* Smoke particles */
+.smoke{
+    position:fixed;
+    pointer-events:none;
+    border-radius:90%;
+
+    background:radial-gradient(
+        circle,
+        rgba(3, 192, 255, 0.9) 0%,
+        rgba(9, 29, 255, 0.5) 45%,
+        rgba(255,122,24,.15) 70%,
+        transparent 100%
+    );
+
+    filter:blur(10px);
+    animation:smokeFade 1.5s ease-out forwards;
+}
+
+@keyframes smokeFade{
+    0%{
+        opacity:.8;
+        transform:
+            translate(-50%,-50%)
+            scale(1);
+    }
+
+    100%{
+        opacity:0;
+        transform:
+            translate(
+                calc(-50% + var(--driftX)),
+                calc(-50% - 60px)
+            )
+            scale(3.5);
+    }
+}
+</style>
+<div class="logo">Portfolio</div>
+
+<nav class="navbar">
+    <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#Education">Education</a></li>
+    
+    </ul>
+</nav>
+
+   <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#0f0f1a;
+}
+
+/* NAVBAR */
+.navbar{
+    padding:20px 50px;
+}
+
+/* MENU */
+.menu{
+    list-style:none;
+    display:flex;
+    gap:40px;
+}
+
+.menu li a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.menu li a:hover{
+    color:#ff7b00;
+}
+
+/* DROPDOWN */
+.dropdown{
+    position:relative;
+}
+
+/* hidden menu */
+.dropdown-menu{
+    position:absolute;
+    top:35px;
+    left:0;
+    background:#1a1a2e;
+    border-radius:10px;
+    padding:10px 0;
+    min-width:200px;
+    display:none;
+    box-shadow:0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* dropdown items */
+.dropdown-menu li{
+    list-style:none;
+}
+
+.dropdown-menu li a{
+    display:block;
+    padding:10px 20px;
+    color:#ddd;
+}
+
+.dropdown-menu li a:hover{
+    background:#ff7b00;
+    color:#fff;
+}
+
+/* SHOW ON HOVER */
+.dropdown:hover .dropdown-menu{
+    display:block;
+}
+</style>
+<style>
+   
+</style>
+</header>
+</style>
+
+<section id="home" class="hero">
+ <div class="profile-image">
+    <img src="My profile.jpg" alt="Jecille Daray" loading="lazy">
+
+</div>
+
+<style>
+.profile-image{
+    width:400px;
+    height:400px;
+    margin:0 auto 30px;
+    border-radius:50%;
+    overflow:hidden;
+    border:4px solid #60a5fa;
+    box-shadow:0 0 30px rgba(96,165,250,0.6);
+}
+
+.profile-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+</style>
+<h1>
+Building <span>Creative</span><br>
+Digital Experiences
+</h1>
+
+<p>
+Transforming ideas into stunning visuals and modern websites that leave a lasting impression.
+I help businesses, brands, and individuals stand out through creative design, professional editing, 
+and engaging digital experiences.
+</p>
+
+
+<div class="button-container">
+    <a href="#contact" class="btn">Let's Connect</a>
+    <a href="JECILLE CV.pdf" download class="btn">Download My CV</a>
+</div>
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<div class="social-icons">
+    <a href="https://www.facebook.com/jecilledaray99" target="">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+
+    <a href="https://www.instagram.com/darayxxi/?hl=en" target="">
+        <i class="fab fa-instagram"></i>
+    </a>
+
+    <a href="https://www.linkedin.com/in/jecille-daray-878451240/" target="">
+        <i class="fab fa-linkedin-in"></i>
+    </a>
+
+    <a href="https://profile.indeed.com/?hl=en_PH&co=PH&from=gnav-menu-homepage" target="">
+        <i class="fas fa-briefcase"></i>
+    </a>
+
+    <a href="https://github.com/Jecille99/My-Portfolio.git" target="">
+        <i class="fab fa-github"></i>
+    </a>
+
+    <a href="jecilledaray@gmail.com">
+        <i class="fas fa-envelope"></i>
+    </a>
+</div>
+<style>
+.cv-btn{
+    display:inline-block;
+    padding:14px 30px;
+    background:linear-gradient(135deg,#3b82f6,#8b5cf6);
+    color:white;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+    transition:0.3s ease;
+    box-shadow:0 5px 20px rgba(59,130,246,0.3);
+}
+
+.cv-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(59,130,246,0.5);
+}
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.social-icons a {
+    width: 50px;
+    height: 50px;
+    background: #111;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 22px;
+    transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+    background: gold;
+    color: whitesmoke;
+    transform: translateY(-5px);
+}
+</style>
+
+
+</section>
+
+<section id="about" class="about-identity-section">
+
+    <div class="about-identity-card">
+      <div class="profile-image">
+    <img src="Jecille.png" alt="Jecille Daray">
+</div>
+
+<style>
+.profile-image{
+    width:400px;
+    height:400px;
+    margin:0 auto 30px;
+    border-radius:50%;
+    overflow:hidden;
+    border:4px solid #60a5fa;
+    box-shadow:0 0 30px rgba(96,165,250,0.6);
+}
+
+.profile-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+</style>
+
+        <span class="#">ABOUT ME & MY IDENTITY</span>
+
+        <h2>Who Am I?</h2>
+
+        <p>
+            I am <strong>Jecille Daray</strong>, a passionate Web Designer, Web Developer,
+            and Virtual Assistant who combines creativity, technical skills, and attention
+            to detail to create meaningful digital experiences. My journey into the digital
+            world began with a curiosity for technology and a desire to help businesses
+            establish a strong online presence.
+        </p>
+
+        <p>
+            I am a graduate of the Bachelor of Science in Information Technology program. 
+            I continuously develop my skills in web development, problem-solving, and digital
+             innovation through both academic and hands-on projects. I believe that great digital 
+             solutions should not only look appealing but also provide functionality, efficiency, 
+             and value.
+
+        </p>
+
+        <div class="identity-box">
+            <h3>My Identity</h3>
+
+            <p>
+                My identity is built on creativity, adaptability, and continuous growth.
+                I enjoy transforming ideas into professional digital experiences that are
+                both visually appealing and user-focused.
+            </p>
+
+            <p>
+                I adapt quickly to new tools, technologies, and challenges. Rather than
+                restarting when something doesn't work, I refine, improve, and move
+                forward with purpose. This mindset allows me to stay productive,
+                organized, and focused on delivering quality results.
+            </p>
+            </style>
+
+            <h5><span class="section-tag">MY EXPERIENCE</span></h5>
+
+            <div class="experience-item">
+    <div class="experience-header">
+        <h3>Administrative Assistant / Photo Studio Staff</h3>
+        <span class="section-tag">RD Photography Studio | August 2022 – May 2026</span>
+    </div>
+
+    <div class="experience-content">
+        <ul>
+            <li>Manage and maintain customer records, documents, and studio files.</li>
+            <li>Create, process, and print ID photos and related materials.</li>
+            <li>Provide professional customer assistance and support.</li>
+            <li>Scan, organize, and archive important documents.</li>
+            <li>Design and prepare layouts for printing and photo projects.</li>
+            <li>Perform routine maintenance and troubleshooting of computer systems and studio equipment.</li>
+        </ul>
+    </div>
+</div>
+
+            <div class="experience-item">
+    <div class="experience-header">
+        <h3>Office Trainee (OJT)</h3>
+        <span class="section-tag">
+            Alfalink Total Solution Inc. | March 20, 2022 – June 3, 2022
+        </span>
+    </div>
+
+    <div class="experience-content">
+        <ul>
+            <li>Encoded and updated product and inventory records accurately.</li>
+            <li>Monitored product stock levels and availability.</li>
+            <li>Processed sales invoices and official receipts.</li>
+            <li>Assisted customers and responded to inquiries professionally.</li>
+            <li>Conducted product inspections and quality verification.</li>
+        </ul>
+    </div>
+</div>
+            <div class="experience-row">
+    <div class="left-column">
+        <h3>Print Shop Assistant (OJT)</h3>
+        <span class="section-tag">RCC Print Shop Trento</span>
+        <p>September 19, 2018 – November 10, 2018</p>
+    </div>
+
+    <div class="right-column">
+        <ul>
+            <li>Performed data encoding and maintained accurate records.</li>
+            <li>Created layouts and graphic designs for various printing projects.</li>
+            <li>Produced ID photos and identification materials.</li>
+            <li>Assisted customers with printing services and design requirements.</li>
+            <li>Maintained, cleaned, and ensured the proper functioning of computer systems and equipment.</li>
+        </ul>
+    </div>
+</div>
+
+            <blockquote>
+                "I create with purpose, adapt with confidence, and deliver with excellence."
+            </blockquote>
+        </div>
+
+    </div>
+</section>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:#fff;
+    padding:50px 20px;
+}
+
+.about-identity-section{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.about-identity-card{
+    max-width:900px;
+    width:100%;
+    padding:50px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.1);
+    box-shadow:0 0 30px rgba(59,130,246,0.25);
+}
+
+.section-tag{
+    display:inline-block;
+    padding:8px 18px;
+    border-radius:30px;
+    background:rgba(59,130,246,0.15);
+    color:#60a5fa;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.about-identity-card h2{
+    font-size:42px;
+    margin-bottom:20px;
+    background:linear-gradient(90deg,#60a5fa,#a855f7);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.about-identity-card p{
+    color:#cbd5e1;
+    line-height:1.9;
+    margin-bottom:18px;
+}
+
+.identity-box{
+    margin-top:35px;
+    padding:25px;
+    border-radius:18px;
+    background:rgba(255,255,255,0.03);
+    border-left:4px solid #60a5fa;
+}
+
+.identity-box h3{
+    color:#60a5fa;
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+blockquote{
+    margin-top:20px;
+    padding:15px;
+    border-radius:10px;
+    background:rgba(96,165,250,0.08);
+    color:#f8fafc;
+    font-style:italic;
+    border-left:3px solid #60a5fa;
+}
+
+@media(max-width:768px){
+    .about-identity-card{
+        padding:30px;
+    }
+
+    .about-identity-card h2{
+        font-size:32px;
+    }
+
+    .identity-box h3{
+        font-size:24px;
+    }
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0d0602;
+    color:#fff;
+}
+
+.tools-section{
+    padding:80px 8%;
+    text-align:center;
+}
+
+.tools-section h2{
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.tools-section h2 span{
+    color:#ff7b00;
+}
+
+.line{
+    width:90px;
+    height:4px;
+    background:#ff7b00;
+    margin:0 auto 60px;
+    border-radius:10px;
+}
+
+.tools-container{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.tool-card{
+    width:210px;
+    height:170px;
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    transition:transform 1s ease;
+}
+
+.tool-card:hover{
+    transform:translateY(-10px);
+    border-color:#ff7b00;
+    box-shadow:0 0 25px rgba(255,123,0,.3);
+}
+
+.tool-card img{
+    width:60px;
+    height:60px;
+    margin-bottom:15px;
+}
+
+.tool-card h3{
+    font-size:22px;
+    margin-bottom:5px;
+}
+
+.tool-card p{
+    color:#aaa;
+    font-size:14px;
+}
+</style>
+
+    <section id="skills" class="tools-section">
+        
+    <h2 class="tools-title">Creative & Tech Stack <span>Tools</span>
+    </h2>
+    <div class="title-underline"></div>
+    </section>
+
+
+    <div class="tools-container">
+
+        <div class="tool-card">
+     <img src="canva.png" alt="canva">
+    <h3>Canva</h3>
+    <p>Graphic Design</p>
+</div>
+
+        <div class="tool-card">
+            <img src="lightroom.png" alt="lightroom">
+            <h3>lightroom</h3>
+            <p>lightroom</p>
+        </div>
+
+        <div class="tool-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="">
+            <h3>VS Code</h3>
+            <p>Code Editor</p>
+        </div>
+
+        <div class="tool-card">
+            <img src="css.png" alt="css">
+            <h3>CSS</h3>
+            <p>Css</p>
+        </div>
+
+        <div class="tool-card">
+            <img src="calendar.png" alt="calendar">
+            <h3>calendar</h3>
+            <p>Calendar</p>
+        </div>
+
+        <div class="tool-card">
+            <img src="gmail.jpg" alt="gmail">
+            <h3>gmail</h3>
+            <p>Gmail</p>
+        </div>
+
+         <div class="tool-card">
+            <img src="microsoft.png" alt="microfot">
+            <h3>microsoft</h3>
+            <p>Microsoft</p>
+        </div>
+
+        
+         <div class="tool-card">
+            <img src="javascript.png" alt="javascript">
+            <h3>javascript</h3>
+            <p>JavaScript</p>
+        </div>
+
+        <div class="tool-card">
+            <img src="drive.png" alt="drive">
+            <h3>drive</h3>
+            <p>Goodle Drive</p>
+        </div>
+        
+        <div class="tool-card">
+            <img src="pdf.png" alt="pdf">
+            <h3>pdf</h3>
+            <p>Acrobat PDF</p>
+        </div>
+
+        <div class="tool-card">
+            <img src="capcut.png" alt="capcut">
+            <h3>capcut</h3>
+            <p>CapCut</p>
+        </div>
+
+        <div class="tool-card">
+            <img src="excel.png" alt="excel">
+            <h3>excel</h3>
+            <p>Excel</p>
+        </div>
+    </div>
+
+</section>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#0f0f1a;
+}
+
+/* NAVBAR */
+.navbar{
+    padding:20px 50px;
+}
+
+/* MENU */
+.menu{
+    list-style:none;
+    display:flex;
+    gap:40px;
+}
+
+.menu li a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.menu li a:hover{
+    color:#ff7b00;
+}
+
+/* DROPDOWN */
+.dropdown{
+    position:relative;
+}
+
+/* hidden menu */
+.dropdown-menu{
+    position:absolute;
+    top:35px;
+    left:0;
+    background:#1a1a2e;
+    border-radius:10px;
+    padding:10px 0;
+    min-width:200px;
+    display:none;
+    box-shadow:0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* dropdown items */
+.dropdown-menu li{
+    list-style:none;
+}
+
+.dropdown-menu li a{
+    display:block;
+    padding:10px 20px;
+    color:#ddd;
+}
+
+.dropdown-menu li a:hover{
+    background:#ff7b00;
+    color:#fff;
+}
+
+/* SHOW ON HOVER */
+.dropdown:hover .dropdown-menu{
+    display:block;
+}
+</style>
+
+<section id="projects">
+
+<h2 class="section-title">
+Projects
+</h2>
+
+<div class="projects-grid">
+
+<a href="https://canva.link/g12o11h6naiewqk"class="project-link">
+
+    <div class="glass project-card">
+
+        <img src="website.jpg"
+             alt="website"
+             class="project-img">
+
+        <div class="project-content">
+            <h3>Portfolio Website</h3>
+            <p>Design • Create • Innovate</p>
+        </div>
+
+    </div>
+
+</a>
+
+<a href="https://canva.link/y2l7nl1aqogtbg9"class="project-link">
+
+    <div class="glass project-card">
+
+        <img src="Home.jpg"
+             alt="Home"
+             class="project-img">
+
+        <div class="project-content">
+            <h3>Graphic Design</h3>
+            <p>Creative Design | Modern Aesthetics | Professional Results</p>
+        </div>
+
+    </div>
+
+</a>
+</a>
+<style>
+      /* GRID LAYOUT */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 40px;
+}
+/* GLASS CARD STYLE */
+.glass.project-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: 0.3s ease;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* HOVER EFFECT */
+.glass.project-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+/* IMAGE HOVER ZOOM */
+.glass.project-card:hover .project-img {
+    transform: scale(1.05);
+}
+/* IMAGE */
+.project-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: 0.4s ease;
+}
+
+/* CONTENT */
+.project-content {
+    padding: 15px;
+    color: #e2e8f0;
+}
+
+
+.project-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-card {
+    overflow: hidden;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.project-img img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-content {
+    padding: 20px;
+}
+</style>
+
+
+<a href="https://canva.link/2qdqmzttgy13dj3com" class="project-link">
+
+    <div class="glass project-card">
+
+        <img src="AVA.jpg"
+             alt="AVA"
+             class="project-img">
+
+        <div class="project-content">
+            <h3>Administrative Virtual Assistant</h3>
+            <p>High-converting landing page designed to boost engagement and generate leads.</p>
+        </div>
+
+    </div>
+
+</a>
+</div>
+<div class="column">
+
+<section id="Education">
+
+    <div class="identity-box">
+
+        <h2>EDUCATIONAL BACKGROUND</h2>
+
+        <div class="edu-card">
+            <h3>ACES COLLEGE & AMA TAGUM COLLEGE</h3>
+            <span class="section-tag">2018 – 2022</span>
+            <p>
+                Bachelor of Science in Information Technology (BSIT)<br>
+                Mankilam, Tagum City
+            </p>
+        </div>
+
+        <div class="edu-card">
+            <h3>STA. JOSEFA SENIOR HIGH SCHOOL</h3>
+            <span class="section-tag">2017 – 2018</span>
+            <p>
+                TVL - Information Communication Technology<br>
+                Sta. Josefa, Agusan del Sur
+            </p>
+        </div>
+
+        <div class="edu-card">
+            <h3>STA. JOSEFA NATIONAL HIGH SCHOOL</h3>
+            <span class="section-tag">2016 – 2017</span>
+            <p>
+                Sta. Josefa, Agusan del Sur
+            </p>
+        </div>
+
+        <div class="edu-card">
+            <h3>STA. JOSEFA ELEMENTARY SCHOOL</h3>
+            <span class="section-tag">2013 – 2014</span>
+            <p>
+                Sta. Josefa, Agusan del Sur
+            </p>
+        </div>
+
+        <!-- Achievements -->
+        <div class="awards-card">
+            <h3>ACHIEVEMENTS & AWARDS</h3>
+
+            <ul>
+                <li>Certificate of Completion (2022)</li>
+                <li>Certificate of Appreciation (2019)</li>
+                <li>Certificate of Completion (2020)</li>
+                <li>NC II Certificate</li>
+            </ul>
+        </div>
+
+    </div>
+
+</section>
+<style>
+#Education{
+    padding:80px 8%;
+    display:flex;
+    justify-content:center;
+}
+
+.identity-box{
+    width:100%;
+    max-width:900px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:25px;
+    padding:40px;
+    box-shadow:0 0 30px rgba(96,165,250,0.15);
+}
+
+.identity-box h2{
+    text-align:center;
+    margin-bottom:30px;
+    font-size:36px;
+    color:#e15f02;
+}
+
+.edu-card,
+.awards-card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:20px;
+}
+
+.edu-card h3,
+.awards-card h3{
+    color:#32acfd;
+    margin-bottom:10px;
+}
+
+.section-tag{
+    display:inline-block;
+    background:#e15f02;
+    color:#fff;
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:14px;
+    margin-bottom:10px;
+}
+
+.edu-card p{
+    margin-top:10px;
+    line-height:1.6;
+}
+
+.awards-card ul{
+    padding-left:20px;
+}
+
+.awards-card li{
+    margin-bottom:10px;
+}
+</style>
+<section class="contact-section" id="contact">
+    <h2 class="contact-title">Let's <span>Connect</span></h2>
+
+    <div class="contact-wrapper">
+
+        <!-- Left Side -->
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p>
+                Feel free to reach out for collaborations or just a friendly hello.
+            </p>
+
+            <div class="info-item">
+                <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div>
+                    <h4>Country</h4>
+                    <span>Philippines</span>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="icon"><i class="fas fa-envelope"></i></div>
+                <div>
+                    <h4>Email</h4>
+                    <span>jecilledaray@email.com</span>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="icon"><i class="fas fa-phone"></i></div>
+                <div>
+                    <h4>WhatsApp</h4>
+                    <span>+63 907 877 7684</span>
+                </div>
+            </div>
+
+            <h4 class="follow-title">Follow Me</h4>
+
+            <div class="social-icons">
+                <a href="https://www.facebook.com/jecilledaray99" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a href="https://www.instagram.com/darayxxi/?hl=en" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/jecille-daray-878451240/" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Right Side -->
+        <div class="contact-form">
+            <h3>Send Message</h3>
+            <p>I'll get back to you as soon as possible.</p>
+
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email Address" required>
+
+                <textarea rows="6" placeholder="What would you like to say?" required></textarea>
+
+                <button type="submit">
+                    Send Message <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Contact Section */
+.contact-section{
+    padding:100px 8%;
+    color:#fff;
+    font-family:"Segoe UI",sans-serif;
+}
+
+.contact-title{
+    text-align:center;
+    font-size:3rem;
+    margin-bottom:50px;
+    font-weight:700;
+}
+
+.contact-title span{
+    color:#ff7a18;
+}
+
+.contact-wrapper{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.contact-info,
+.contact-form{
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:25px;
+    padding:35px;
+    backdrop-filter:blur(10px);
+}
+
+.contact-info h3,
+.contact-form h3{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.contact-info p,
+.contact-form p{
+    color:#b8b8b8;
+    margin-bottom:30px;
+    line-height:1.6;
+}
+
+.info-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.icon{
+    width:50px;
+    height:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:12px;
+    color:#ff7a18;
+    font-size:20px;
+}
+
+.info-item h4{
+    margin-bottom:5px;
+    font-size:18px;
+}
+
+.info-item span{
+    color:#b8b8b8;
+}
+
+.follow-title{
+    margin-top:35px;
+    margin-bottom:15px;
+}
+
+.social-icons{
+    display:flex;
+    gap:12px;
+}
+
+.social-icons a{
+    width:50px;
+    height:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.1);
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.social-icons a:hover{
+    background:#ff7a18;
+    transform:translateY(-4px);
+}
+
+.contact-form form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    background:rgba(35,28,24,0.85);
+    border:1px solid rgba(255,255,255,0.08);
+    padding:15px;
+    border-radius:12px;
+    color:#fff;
+    font-size:16px;
+    outline:none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border-color:#ff7a18;
+}
+
+.contact-form button{
+    background:#ff7a18;
+    color:#fff;
+    border:none;
+    padding:15px;
+    border-radius:12px;
+    font-size:17px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.contact-form button:hover{
+    background:#ff8c32;
+}
+
+@media(max-width:900px){
+    .contact-wrapper{
+        grid-template-columns:1fr;
+    }
+
+    .contact-title{
+        font-size:2.3rem;
+    }
+}
+</style>
+
+<footer>
+    <p>© 2026 Jecille Daray</p>
+    <p>Web Developer • Designer • Virtual Assistant</p>
+</footer>
+
+</body>
+</html>
